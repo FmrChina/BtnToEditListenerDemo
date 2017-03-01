@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="base_text">#4A4A4A</color>
+    <color name="base_bg">#FFFFFF</color>
+    <color name="base_line">#EDEDED</color>
+
+    <color name="black_round_bg">#27262B</color>
+    <color name="gray_text">#D3D3D3</color>
+    <color name="hint_text">#D3D3D3</color>
+    <color name="white_text">#FFFEFF</color>
+    <color name="gray_btn_bg">#EAEAEA</color>
+    <color name="agreement_bg">#8A8A8A</color>
+    <color name="bike_type_uncheck_bg">#EBEBEB</color>
+    <color name="bike_type_uncheck_text">#ADADAD</color>
+    <color name="technological_process_bg">#F6F6F6</color>
+    <color name="technological_process_uncheck_line">#D8D8D8</color>
+    <color name="dscp_text">#808080</color>
+    <color name="dscp1_text">#C4BEB2</color>
+
+
+
+    <color name="black_overlay">#66000000</color>
+    <!-- app主色调-->
+    <color name="main_color">#3DCC7A</color>
+</resources>
