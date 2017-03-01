@@ -21,20 +21,10 @@ public class BtnToEditListenerUtils {
 
     private Button btn;
 
-    private volatile static BtnToEditListenerUtils mInstance;
 
-
-    //其实这个单例没必要，只会在UI线程操作UI
     public static BtnToEditListenerUtils getInstance(){
-        if (mInstance == null) {
-            synchronized (BtnToEditListenerUtils.class){
-                if (mInstance == null) {
-                    mInstance = new BtnToEditListenerUtils();
-                }
-            }
-        }
-
-        return mInstance;
+        
+        return new BtnToEditListenerUtils();
     }
 
     public BtnToEditListenerUtils setBtn(Button btn){
