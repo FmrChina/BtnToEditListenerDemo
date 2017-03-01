@@ -18,11 +18,6 @@ import java.util.List;
 public class BtnToEditListenerUtils {
 
     private List<EditText> editTextList = new ArrayList<>();
-    private int count1;
-    private int count2;
-    private int count3;
-    private int count4;
-    private int count5;
 
     private Button btn;
 
@@ -54,144 +49,64 @@ public class BtnToEditListenerUtils {
     }
 
     public void build(){
+            setWatcher();
+    }
 
-        if (editTextList.size() == 2) {
-            setWatcher2();
+    /**
+     * 给每一个EditText设置Watcher监听，当前的EditText文本不为空时遍历每一个EditText，
+     * 只有都不为空时 tag为true
+     */
+    private void setWatcher(){
+
+        for (int i = 0; i < editTextList.size(); i++) {
+            editTextList.get(i).addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    if (s.length() == 0) {
+                        setBtnUnavailable();
+                        return;
+                    }
+
+                    boolean tag = false;
+
+                    for (int i = 0; i < editTextList.size(); i++) {
+                        if (editTextList.get(i).getText().length() != 0) {
+                            tag = true;
+                        }else{
+                            tag = false;
+                            break;
+                        }
+                    }
+
+                    if (tag) {
+                        setBtnAvailable();
+                    }else{
+                        setBtnUnavailable();
+                    }
+                }
+            });
         }
 
-        if (editTextList.size() == 3) {
-            setWatcher3();
-        }
 
     }
 
-    private void setWatcher2(){
-        editTextList.get(0).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                count1 = s.length();
-                if (s.length() != 0 && count2 !=0) {
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.main_color_btn_round_bg));
-                    btn.setEnabled(true);
-                }else{
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(),R.drawable.gray_btn_round_bg));
-                    btn.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        editTextList.get(1).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                count2 = s.length();
-                if (s.length() != 0 && count1 !=0) {
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.main_color_btn_round_bg));
-                    btn.setEnabled(true);
-                }else{
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(),R.drawable.gray_btn_round_bg));
-                    btn.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+    private void setBtnAvailable(){
+        btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.main_color_btn_round_bg));
+        btn.setEnabled(true);
     }
-
-
-    private void setWatcher3(){
-        editTextList.get(0).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                count1 = s.length();
-                if (count1 != 0 && count2 !=0 && count3 !=0) {
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.main_color_btn_round_bg));
-                    btn.setEnabled(true);
-                }else{
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(),R.drawable.gray_btn_round_bg));
-                    btn.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        editTextList.get(1).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                count2 = s.length();
-                if (count1 != 0 && count2 !=0 && count3 !=0) {
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.main_color_btn_round_bg));
-                    btn.setEnabled(true);
-                }else{
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(),R.drawable.gray_btn_round_bg));
-                    btn.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        editTextList.get(2).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                count3 = s.length();
-                if (count1 != 0 && count2 !=0 && count3 !=0) {
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.main_color_btn_round_bg));
-                    btn.setEnabled(true);
-                }else{
-                    btn.setBackground(ContextCompat.getDrawable(App.getAppContext(),R.drawable.gray_btn_round_bg));
-                    btn.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-
+    private void setBtnUnavailable(){
+        btn.setBackground(ContextCompat.getDrawable(App.getAppContext(), R.drawable.gray_btn_round_bg));
+        btn.setEnabled(true);
     }
 
 }

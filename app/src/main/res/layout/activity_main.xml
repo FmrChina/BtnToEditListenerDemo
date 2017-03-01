@@ -133,9 +133,76 @@
                 android:layout_marginTop="10dp"
                 />
 
+            <TextView
+                android:id="@+id/tv_pwd_txt1"
+                android:layout_below="@+id/v_h_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="密码"
+                android:textSize="16sp"
+                android:textColor="@color/base_text"
+                />
+
+            <EditText
+                android:id="@+id/edit_pwd1"
+                android:background="@null"
+                android:layout_alignBaseline="@+id/tv_pwd_txt1"
+                android:layout_alignLeft="@+id/edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入6-18位数字，字母或字符"
+                android:textColorHint="@color/hint_text"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                />
+
+            <View
+                android:id="@+id/v_h_pwd1"
+                android:layout_below="@+id/tv_pwd_txt1"
+                android:background="@color/main_color"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_pwd_txt2"
+                android:layout_below="@+id/v_h_pwd1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="密码"
+                android:textSize="16sp"
+                android:textColor="@color/base_text"
+                />
+
+            <EditText
+                android:id="@+id/edit_pwd2"
+                android:background="@null"
+                android:layout_alignBaseline="@+id/tv_pwd_txt2"
+                android:layout_alignLeft="@+id/edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入6-18位数字，字母或字符"
+                android:textColorHint="@color/hint_text"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                />
+
+            <View
+                android:id="@+id/v_h_pwd2"
+                android:layout_below="@+id/tv_pwd_txt2"
+                android:background="@color/main_color"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="10dp"
+                />
+
             <Button
                 android:id="@+id/btn_register"
-                android:layout_below="@+id/v_h_pwd"
+                android:layout_below="@+id/v_h_pwd2"
                 android:background="@drawable/gray_btn_round_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

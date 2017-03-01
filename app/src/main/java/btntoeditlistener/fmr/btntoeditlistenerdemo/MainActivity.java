@@ -12,7 +12,7 @@ import android.widget.Toast;
 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editPhone,editPwd,editVerify;
+    private EditText editPhone,editPwd,editVerify,editPwd1,editPwd2;
     private Button btnRegister;
 
     @Override
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private void init(){
         editPhone = (EditText) findViewById(R.id.edit_phone);
         editPwd = (EditText) findViewById(R.id.edit_pwd);
+        editPwd1 = (EditText) findViewById(R.id.edit_pwd1);
+        editPwd2 = (EditText) findViewById(R.id.edit_pwd2);
         editVerify = (EditText) findViewById(R.id.edit_verification);
         btnRegister = (Button) findViewById(R.id.btn_register);
 
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 .setBtn(btnRegister)
                 .addEditView(editPhone)
                 .addEditView(editPwd)
+                .addEditView(editPwd1)
+                .addEditView(editPwd2)
                 .addEditView(editVerify)
                 .build();
 
